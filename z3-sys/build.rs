@@ -140,7 +140,8 @@ fn build_bundled_z3() {
         // Don't build the Z3 repl.
         .define("Z3_BUILD_EXECUTABLE", "false")
         // Don't build the tests.
-        .define("Z3_BUILD_TEST_EXECUTABLES", "false");
+        .define("Z3_BUILD_TEST_EXECUTABLES", "false")
+        .define("Z3_LINK_TIME_OPTIMIZATION", "true");
 
     if cfg!(target_os = "windows") {
         // The compiler option -MP and the msbuild option -m
